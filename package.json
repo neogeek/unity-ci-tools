@@ -4,8 +4,5 @@
     "jsdom": "12.0.0",
     "raspar": "1.1.2"
   },
-  "scripts": {
-    "update": "node utils/editor-installers-update.js"
-  },
   "private": true
 }

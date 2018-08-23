@@ -4,4 +4,4 @@ node_js:
 before_install:
   - if [[ `npm -v` != 5* ]]; then npm i -g npm@latest; fi
 after_success:
-  - npm run update
+  - make update
