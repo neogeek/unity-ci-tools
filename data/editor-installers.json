@@ -1,8 +1,4 @@
 {
-    "2018.2.5f1": {
-        "mac": "https://netstorage.unity3d.com/unity/3071d1717b71/MacEditorInstaller/Unity-2018.2.5f1.pkg",
-        "win64": "https://netstorage.unity3d.com/unity/3071d1717b71/Windows64EditorInstaller/UnitySetup64-2018.2.5f1.exe"
-    },
     "2018.2.4f1": {
         "mac": "https://download.unity3d.com/download_unity/cb262d9ddeaf/MacEditorInstaller/Unity-2018.2.4f1.pkg",
         "win64": "https://download.unity3d.com/download_unity/cb262d9ddeaf/Windows64EditorInstaller/UnitySetup64-2018.2.4f1.exe"
