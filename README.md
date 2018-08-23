@@ -1,7 +1,6 @@
 # Unity CI Tools
 
 [![Build Status](https://travis-ci.org/neogeek/unity-ci-tools.svg?branch=master)](https://travis-ci.org/neogeek/unity-ci-tools)
-
 [![Join the chat at https://discord.gg/nNtFsfd](https://img.shields.io/badge/discord-join%20chat-7289DA.svg)](https://discord.gg/nNtFsfd)
 [![](https://img.shields.io/badge/Trello-Board-blue.svg)](hhttps://trello.com/b/b4Tpw4Bw/unity-ci-tools)
 
