@@ -6,13 +6,30 @@ if [ ! -d "$HOME/cache" ]; then
 
 fi
 
-URL="https://netstorage.unity3d.com/unity/3071d1717b71/MacEditorInstaller/Unity-2018.2.5f1.pkg"
-FILENAME=$(basename "$URL")
+if [ -z $UNITY_INSTALLER_HASH ]; then
+
+    UNITY_INSTALLER_HASH="3071d1717b71"
+
+fi
+
+if [ -z $UNITY_INSTALLER_VERSION ]; then
+
+    UNITY_INSTALLER_VERSION="2018.2.5f1"
+
+fi
+
+if [ -z $UNITY_INSTALLER_URL ]; then
+
+    UNITY_INSTALLER_URL="https://netstorage.unity3d.com/unity/${UNITY_HASH}/MacEditorInstaller/Unity-${UNITY_VERSION}.pkg"
+
+fi
+
+FILENAME=$(basename "$UNITY_INSTALLER_URL")
 
 if [ ! -f "$HOME/cache/$FILENAME" ]; then
 
     echo "Downloading Unity"
-    curl --retry 5 -o "$HOME/cache/$FILENAME" "$URL"
+    curl --retry 5 -o "$HOME/cache/$FILENAME" "$UNITY_INSTALLER_URL"
 
 fi
 
