@@ -28,10 +28,10 @@ FILENAME=$(basename "$UNITY_INSTALLER_URL")
 
 if [ ! -f "$HOME/cache/$FILENAME" ]; then
 
-    echo "Downloading Unity"
+    echo "Downloading Unity $UNITY_INSTALLER_VERSION from $UNITY_INSTALLER_URL"
     curl --retry 5 -o "$HOME/cache/$FILENAME" "$UNITY_INSTALLER_URL"
 
 fi
 
-echo "Installing Unity"
+echo "Installing Unity $UNITY_INSTALLER_VERSION"
 sudo installer -dumplog -package "$HOME/cache/$FILENAME" -target /
