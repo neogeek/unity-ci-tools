@@ -13,9 +13,9 @@
 ```yaml
 sudo: required
 language: objective-c
-osx_image: xcode9.4.1
+osx_image: xcode10.0
 rvm:
-  - 2.5.1
+  - 2.5.3
 install:
   - bash <(curl -fsSL https://raw.githubusercontent.com/neogeek/unity-ci-tools/master/bin/install.sh)
 script:
