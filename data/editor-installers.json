@@ -1,6 +1,9 @@
 {
+    "2018.3.6f1": {
+        "win64": "https://netstorage.unity3d.com/unity/a220877bc173/Windows64EditorInstaller/UnitySetup64-2018.3.6f1.exe"
+    },
     "2018.3.5f1": {
-        "win64": "https://netstorage.unity3d.com/unity/76b3e37670a4/Windows64EditorInstaller/UnitySetup64-2018.3.5f1.exe"
+        "win64": "https://download.unity3d.com/download_unity/76b3e37670a4/Windows64EditorInstaller/UnitySetup64-2018.3.5f1.exe"
     },
     "2018.3.4f1": {
         "win64": "https://download.unity3d.com/download_unity/1d952368ca3a/Windows64EditorInstaller/UnitySetup64-2018.3.4f1.exe"
