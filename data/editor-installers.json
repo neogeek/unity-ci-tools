@@ -1,6 +1,9 @@
 {
+    "2018.3.7f1": {
+        "win64": "https://netstorage.unity3d.com/unity/9e14d22a41bb/Windows64EditorInstaller/UnitySetup64-2018.3.7f1.exe"
+    },
     "2018.3.6f1": {
-        "win64": "https://netstorage.unity3d.com/unity/a220877bc173/Windows64EditorInstaller/UnitySetup64-2018.3.6f1.exe"
+        "win64": "https://download.unity3d.com/download_unity/a220877bc173/Windows64EditorInstaller/UnitySetup64-2018.3.6f1.exe"
     },
     "2018.3.5f1": {
         "win64": "https://download.unity3d.com/download_unity/76b3e37670a4/Windows64EditorInstaller/UnitySetup64-2018.3.5f1.exe"
@@ -20,6 +23,9 @@
     },
     "2018.3.0f2": {
         "win64": "https://download.unity3d.com/download_unity/6e9a27477296/Windows64EditorInstaller/UnitySetup64-2018.3.0f2.exe"
+    },
+    "2018.2.21f1": {
+        "win64": "https://download.unity3d.com/download_unity/a122f5dc316d/Windows64EditorInstaller/UnitySetup64-2018.2.21f1.exe"
     },
     "2018.2.20f1": {
         "mac": "https://download.unity3d.com/download_unity/cef3e6c0c622/MacEditorInstaller/Unity-2018.2.20f1.pkg",
@@ -143,6 +149,9 @@
     "2018.1.0f2": {
         "mac": "https://download.unity3d.com/download_unity/d4d99f31acba/MacEditorInstaller/Unity-2018.1.0f2.pkg",
         "win64": "https://download.unity3d.com/download_unity/d4d99f31acba/Windows64EditorInstaller/UnitySetup64-2018.1.0f2.exe"
+    },
+    "2017.4.22f1": {
+        "win64": "https://download.unity3d.com/download_unity/eb4bc6fa7f1d/Windows64EditorInstaller/UnitySetup64-2017.4.22f1.exe"
     },
     "2017.4.21f1": {
         "win64": "https://download.unity3d.com/download_unity/de35fe252486/Windows64EditorInstaller/UnitySetup64-2017.4.21f1.exe"
@@ -278,6 +287,10 @@
     "2017.1.0f3": {
         "mac": "https://download.unity3d.com/download_unity/472613c02cf7/MacEditorInstaller/Unity-2017.1.0f3.pkg",
         "win64": "https://download.unity3d.com/download_unity/472613c02cf7/Windows64EditorInstaller/UnitySetup64-2017.1.0f3.exe"
+    },
+    "5.6.7f1": {
+        "win64": "https://download.unity3d.com/download_unity/e80cc3114ac1/Windows64EditorInstaller/UnitySetup64-5.6.7f1.exe",
+        "win32": "https://download.unity3d.com/download_unity/e80cc3114ac1/Windows32EditorInstaller/UnitySetup32-5.6.7f1.exe"
     },
     "5.6.6f2": {
         "win64": "https://download.unity3d.com/download_unity/6bac21139588/Windows64EditorInstaller/UnitySetup64-5.6.6f2.exe",
