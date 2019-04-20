@@ -4,7 +4,7 @@ const { fetch } = require('raspar');
 
 const { JSDOM } = require('jsdom');
 
-const UNITY_VERSION_PATTERN = /[0-9]{1,4}\.[0-9]+\.[0-9a-z]+/;
+const UNITY_VERSION_PATTERN = /([0-9]{1,4}\.[0-9]+\.[0-9a-z]+)\/([a-z0-9]{12})/;
 const UNITY_EDITOR_PATTERN = /Unity Editor/;
 
 fetch('https://unity3d.com/get-unity/download/archive').then(({ body }) => {
@@ -15,7 +15,10 @@ fetch('https://unity3d.com/get-unity/download/archive').then(({ body }) => {
         .reduce((acc, elem) => {
             const version = elem
                 .getAttribute('href')
-                .match(UNITY_VERSION_PATTERN)[0];
+                .match(UNITY_VERSION_PATTERN)[1];
+            const hash = elem
+                .getAttribute('href')
+                .match(UNITY_VERSION_PATTERN)[2];
 
             const links = [].slice
                 .call(elem.parentNode.parentNode.querySelectorAll('.options a'))
@@ -35,6 +38,13 @@ fetch('https://unity3d.com/get-unity/download/archive').then(({ body }) => {
                     acc[version].win32 = url;
                 }
             });
+
+            if (acc[version].mac && acc[version].mac.match(/\.dmg$/)) {
+                acc[
+                    version
+                ].mac = `https://download.unity3d.com/download_unity/${hash}/MacEditorInstaller/Unity-${version}.pkg`;
+            }
+
             return acc;
         }, {});
     writeFileSync(
