@@ -1,7 +1,7 @@
 {
   "name": "@neogeek/unity-ci-tools",
   "devDependencies": {
-    "jsdom": "13.2.0",
+    "jsdom": "15.0.0",
     "raspar": "1.1.2"
   },
   "private": true
