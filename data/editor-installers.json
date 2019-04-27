@@ -3,6 +3,10 @@
         "mac": "https://download.unity3d.com/download_unity/292b93d75a2c/MacEditorInstaller/Unity-2019.1.0f2.pkg",
         "win64": "https://netstorage.unity3d.com/unity/292b93d75a2c/Windows64EditorInstaller/UnitySetup64-2019.1.0f2.exe"
     },
+    "2018.3.14f1": {
+        "mac": "https://download.unity3d.com/download_unity/d0e9f15437b1/MacEditorInstaller/Unity-2018.3.14f1.pkg",
+        "win64": "https://download.unity3d.com/download_unity/d0e9f15437b1/Windows64EditorInstaller/UnitySetup64-2018.3.14f1.exe"
+    },
     "2018.3.13f1": {
         "mac": "https://download.unity3d.com/download_unity/06548a9e9582/MacEditorInstaller/Unity-2018.3.13f1.pkg",
         "win64": "https://download.unity3d.com/download_unity/06548a9e9582/Windows64EditorInstaller/UnitySetup64-2018.3.13f1.exe"
