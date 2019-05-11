@@ -6,19 +6,19 @@ if [ ! -d "$HOME/cache" ]; then
 
 fi
 
-if [ -z $UNITY_INSTALLER_HASH ]; then
+if [ -z "$UNITY_INSTALLER_HASH" ]; then
 
     UNITY_INSTALLER_HASH="3e18427e571f"
 
 fi
 
-if [ -z $UNITY_INSTALLER_VERSION ]; then
+if [ -z "$UNITY_INSTALLER_VERSION" ]; then
 
     UNITY_INSTALLER_VERSION="2019.1.2f1"
 
 fi
 
-if [ -z $UNITY_INSTALLER_URL ]; then
+if [ -z "$UNITY_INSTALLER_URL" ]; then
 
     UNITY_INSTALLER_URL="https://netstorage.unity3d.com/unity/$UNITY_INSTALLER_HASH/MacEditorInstaller/Unity-$UNITY_INSTALLER_VERSION.pkg"
 
