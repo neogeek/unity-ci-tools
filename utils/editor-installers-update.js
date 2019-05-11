@@ -1,18 +1,20 @@
-const { writeFileSync } = require('fs');
+const {writeFileSync} = require('fs');
 
-const { fetch } = require('raspar');
+const {fetch} = require('raspar');
 
-const { JSDOM } = require('jsdom');
+const {JSDOM} = require('jsdom');
 
 const UNITY_VERSION_PATTERN = /([0-9]{1,4}\.[0-9]+\.[0-9a-z]+)\/([a-z0-9]{12})/;
 const UNITY_EDITOR_PATTERN = /Unity Editor/;
 
-fetch('https://unity3d.com/get-unity/download/archive').then(({ body }) => {
-    const { document } = new JSDOM(body).window;
+fetch('https://unity3d.com/get-unity/download/archive').then(({body}) => {
+
+    const {document} = new JSDOM(body).window;
     const editorInstallers = [].slice
         .call(document.querySelectorAll('.version a[href*="unityhub"]'))
         .filter(elem => elem.getAttribute('href').match(UNITY_VERSION_PATTERN))
         .reduce((acc, elem) => {
+
             const version = elem
                 .getAttribute('href')
                 .match(UNITY_VERSION_PATTERN)[1];
@@ -26,29 +28,43 @@ fetch('https://unity3d.com/get-unity/download/archive').then(({ body }) => {
                 .map(elem => elem.getAttribute('href'));
 
             if (!acc[version]) {
+
                 acc[version] = {};
+
             }
 
             links.map(url => {
+
                 if (url.match(/.(dmg|pkg)$/)) {
+
                     acc[version].mac = url;
+
                 } else if (url.match(/Windows64/)) {
+
                     acc[version].win64 = url;
+
                 } else if (url.match(/Windows32/)) {
+
                     acc[version].win32 = url;
+
                 }
+
             });
 
             if (acc[version].mac && acc[version].mac.match(/\.dmg$/)) {
+
                 acc[
                     version
                 ].mac = `https://download.unity3d.com/download_unity/${hash}/MacEditorInstaller/Unity-${version}.pkg`;
+
             }
 
             return acc;
+
         }, {});
     writeFileSync(
         `${__dirname}/../data/editor-installers.json`,
         `${JSON.stringify(editorInstallers, null, 4)}\n`
     );
+
 });
