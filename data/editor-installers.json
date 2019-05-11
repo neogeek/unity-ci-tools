@@ -1,11 +1,19 @@
 {
+    "2019.1.2f1": {
+        "mac": "https://download.unity3d.com/download_unity/3e18427e571f/MacEditorInstaller/Unity-2019.1.2f1.pkg",
+        "win64": "https://netstorage.unity3d.com/unity/3e18427e571f/Windows64EditorInstaller/UnitySetup64-2019.1.2f1.exe"
+    },
     "2019.1.1f1": {
         "mac": "https://download.unity3d.com/download_unity/fef62e97e63b/MacEditorInstaller/Unity-2019.1.1f1.pkg",
-        "win64": "https://netstorage.unity3d.com/unity/fef62e97e63b/Windows64EditorInstaller/UnitySetup64-2019.1.1f1.exe"
+        "win64": "https://download.unity3d.com/download_unity/fef62e97e63b/Windows64EditorInstaller/UnitySetup64-2019.1.1f1.exe"
     },
     "2019.1.0f2": {
         "mac": "https://download.unity3d.com/download_unity/292b93d75a2c/MacEditorInstaller/Unity-2019.1.0f2.pkg",
         "win64": "https://download.unity3d.com/download_unity/292b93d75a2c/Windows64EditorInstaller/UnitySetup64-2019.1.0f2.exe"
+    },
+    "2018.4.0f1": {
+        "mac": "https://download.unity3d.com/download_unity/b6ffa8986c8d/MacEditorInstaller/Unity-2018.4.0f1.pkg",
+        "win64": "https://download.unity3d.com/download_unity/b6ffa8986c8d/Windows64EditorInstaller/UnitySetup64-2018.4.0f1.exe"
     },
     "2018.3.14f1": {
         "mac": "https://download.unity3d.com/download_unity/d0e9f15437b1/MacEditorInstaller/Unity-2018.3.14f1.pkg",
@@ -194,6 +202,10 @@
     "2018.1.0f2": {
         "mac": "https://download.unity3d.com/download_unity/d4d99f31acba/MacEditorInstaller/Unity-2018.1.0f2.pkg",
         "win64": "https://download.unity3d.com/download_unity/d4d99f31acba/Windows64EditorInstaller/UnitySetup64-2018.1.0f2.exe"
+    },
+    "2017.4.27f1": {
+        "mac": "https://download.unity3d.com/download_unity/0c4b856e4c6e/MacEditorInstaller/Unity-2017.4.27f1.pkg",
+        "win64": "https://download.unity3d.com/download_unity/0c4b856e4c6e/Windows64EditorInstaller/UnitySetup64-2017.4.27f1.exe"
     },
     "2017.4.26f1": {
         "mac": "https://download.unity3d.com/download_unity/3b349d10f010/MacEditorInstaller/Unity-2017.4.26f1.pkg",
