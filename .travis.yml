@@ -3,5 +3,5 @@ node_js:
   - "11"
 before_install:
   - if [[ `npm -v` != 6* ]]; then npm i -g npm@latest; fi
-after_success:
+script:
   - make update
