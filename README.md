@@ -29,6 +29,17 @@ script:
   - bash <(curl -fsSL https://raw.githubusercontent.com/neogeek/unity-ci-tools/master/bin/deauth.sh)
 ```
 
+### Create a `Makefile` File
+
+```yaml
+test: SHELL:=/bin/bash
+test:
+	bash <(curl -fsSL https://raw.githubusercontent.com/neogeek/unity-ci-tools/master/bin/test.sh)
+
+clean:
+	git clean -xdf
+```
+
 ### Setup Environment Variables on Travis
 
 Add the following variables in the settings panel of your project on <https://travis-ci.org/>:
