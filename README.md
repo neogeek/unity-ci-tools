@@ -16,6 +16,11 @@ language: objective-c
 osx_image: xcode10.2
 rvm:
   - 2.6.3
+cache:
+  timeout: 86400 # 1 day
+  directories:
+    - /Users/travis/cache/
+    - /Users/travis/.rvm/
 install:
   - bash <(curl -fsSL https://raw.githubusercontent.com/neogeek/unity-ci-tools/master/bin/install.sh)
 script:
