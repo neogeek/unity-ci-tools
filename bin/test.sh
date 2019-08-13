@@ -11,7 +11,8 @@ if echo "${UNITY_APPLICATION}" | grep "2019"; then
         -batchmode \
         -nographics \
         -silent-crashes \
-        -logFile "$(pwd)/unity.log" \
+        -stackTraceLogType Full \
+        -logFile - \
         -projectPath "$(pwd)/" \
         -runEditorTests \
         -editorTestsResultFile "$(pwd)/test.xml"
@@ -23,16 +24,16 @@ else
         -nographics \
         -noUpm \
         -silent-crashes \
+        -stackTraceLogType Full \
         -logFile "$(pwd)/unity.log" \
         -projectPath "$(pwd)/" \
         -runEditorTests \
         -editorTestsResultFile "$(pwd)/test.xml"
 
+    cat "$(pwd)/unity.log"
+
 fi
 
 CODE=$?
-
-echo $CODE
-cat "$(pwd)/unity.log"
 
 cat "$(pwd)/test.xml" && exit $CODE
