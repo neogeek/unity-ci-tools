@@ -5,14 +5,30 @@ export EVENT_NOKQUEUE=1
 
 UNITY_APPLICATION=$(find /Applications/Unity -name Unity.app | head -1)
 
-"${UNITY_APPLICATION}/Contents/MacOS/Unity" \
-    -batchmode \
-    -nographics \
-    -silent-crashes \
-    -logFile "$(pwd)/unity.log" \
-    -projectPath "$(pwd)/" \
-    -runEditorTests \
-    -editorTestsResultFile "$(pwd)/test.xml"
+if echo "${UNITY_APPLICATION}" | grep "2019"; then
+
+    "${UNITY_APPLICATION}/Contents/MacOS/Unity" \
+        -batchmode \
+        -nographics \
+        -silent-crashes \
+        -logFile "$(pwd)/unity.log" \
+        -projectPath "$(pwd)/" \
+        -runEditorTests \
+        -editorTestsResultFile "$(pwd)/test.xml"
+
+else
+
+    "${UNITY_APPLICATION}/Contents/MacOS/Unity" \
+        -batchmode \
+        -nographics \
+        -noUpm \
+        -silent-crashes \
+        -logFile "$(pwd)/unity.log" \
+        -projectPath "$(pwd)/" \
+        -runEditorTests \
+        -editorTestsResultFile "$(pwd)/test.xml"
+
+fi
 
 CODE=$?
 
