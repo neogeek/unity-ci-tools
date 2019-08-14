@@ -24,7 +24,6 @@ else
         -nographics \
         -noUpm \
         -silent-crashes \
-        -stackTraceLogType Full \
         -logFile "$(pwd)/unity.log" \
         -projectPath "$(pwd)/" \
         -runEditorTests \
