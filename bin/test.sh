@@ -5,9 +5,9 @@ export EVENT_NOKQUEUE=1
 
 UNITY_APPLICATION=$(find /Applications/Unity -name Unity.app | head -1)
 
-if echo "${UNITY_APPLICATION}" | grep "2019"; then
+if echo "$UNITY_APPLICATION" | grep "2019"; then
 
-    "${UNITY_APPLICATION}/Contents/MacOS/Unity" \
+    "$UNITY_APPLICATION/Contents/MacOS/Unity" \
         -batchmode \
         -nographics \
         -silent-crashes \
@@ -19,7 +19,7 @@ if echo "${UNITY_APPLICATION}" | grep "2019"; then
 
 else
 
-    "${UNITY_APPLICATION}/Contents/MacOS/Unity" \
+    "$UNITY_APPLICATION/Contents/MacOS/Unity" \
         -batchmode \
         -nographics \
         -noUpm \

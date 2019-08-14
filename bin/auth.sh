@@ -5,7 +5,7 @@ export EVENT_NOKQUEUE=1
 
 UNITY_APPLICATION=$(find /Applications/Unity -name Unity.app | head -1)
 
-"${UNITY_APPLICATION}/Contents/MacOS/Unity" \
+"$UNITY_APPLICATION/Contents/MacOS/Unity" \
     -quit \
     -batchmode \
     -serial "$UNITY_SERIAL" \
