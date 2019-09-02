@@ -5,13 +5,13 @@ export EVENT_NOKQUEUE=1
 
 UNITY_APPLICATION=$(find /Applications/Unity -name Unity.app | head -1)
 
-UNITY_VERSION=$(defaults read "$UNITY_APPLICATION/Contents/Info.plist" CFBundleVersion)
+UNITY_VERSION=$(defaults read "${UNITY_APPLICATION}/Contents/Info.plist" CFBundleVersion)
 
-echo "Testing with Unity $UNITY_VERSION"
+echo "Testing with Unity ${UNITY_VERSION}"
 
-if echo "$UNITY_VERSION" | grep "2019"; then
+if echo "${UNITY_VERSION}" | grep "2019"; then
 
-    "$UNITY_APPLICATION/Contents/MacOS/Unity" \
+    "${UNITY_APPLICATION}/Contents/MacOS/Unity" \
         -batchmode \
         -nographics \
         -silent-crashes \
@@ -23,7 +23,7 @@ if echo "$UNITY_VERSION" | grep "2019"; then
 
 else
 
-    "$UNITY_APPLICATION/Contents/MacOS/Unity" \
+    "${UNITY_APPLICATION}/Contents/MacOS/Unity" \
         -batchmode \
         -nographics \
         -noUpm \
