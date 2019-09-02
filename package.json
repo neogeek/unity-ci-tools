@@ -2,9 +2,9 @@
   "name": "@neogeek/unity-ci-tools",
   "devDependencies": {
     "@neogeek/eslint-config-standards": "4.2.0",
-    "babel-eslint": "10.0.1",
-    "eslint": "5.16.0",
-    "jsdom": "15.0.0",
+    "babel-eslint": "10.0.3",
+    "eslint": "6.3.0",
+    "jsdom": "15.1.1",
     "raspar": "1.1.2"
   },
   "private": true
