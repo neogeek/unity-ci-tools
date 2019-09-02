@@ -37,6 +37,30 @@ else
 
 fi
 
+LOG_FILE="$(pwd)/test.xml"
+
+printf '\n%s\n\n' "$(<"${LOG_FILE}")"
+
+checktests() {
+
+    TOTAL=$(grep -Eo 'total="([0-9]*)"' "${LOG_FILE}" | head -1 | grep -Eo '[0-9]+')
+    PASSED=$(grep -Eo 'passed="([0-9]*)"' "${LOG_FILE}" | head -1 | grep -Eo '[0-9]+')
+    FAILED=$(grep -Eo 'failed="([0-9]*)"' "${LOG_FILE}" | head -1 | grep -Eo '[0-9]+')
+
+    printf "Test Results \nTotal: ${TOTAL} Passed: ${PASSED} Failed: ${FAILED}\n"
+
+    if [ "${TOTAL}" -ne "${PASSED}" ]; then
+
+        return 1
+
+    fi
+
+    return 0
+
+}
+
+checktests "${LOG_FILE}"
+
 CODE=$?
 
-cat "$(pwd)/test.xml" && exit $CODE
+exit $CODE
