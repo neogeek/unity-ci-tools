@@ -9,7 +9,7 @@ UNITY_VERSION=$(defaults read "${UNITY_APPLICATION}/Contents/Info.plist" CFBundl
 
 echo "Testing with Unity ${UNITY_VERSION}"
 
-if echo "${UNITY_VERSION}" | grep "2019"; then
+if echo "${UNITY_VERSION}" | grep "2019" &> /dev/null; then
 
     "${UNITY_APPLICATION}/Contents/MacOS/Unity" \
         -batchmode \
