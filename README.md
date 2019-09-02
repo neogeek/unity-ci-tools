@@ -13,14 +13,17 @@
 ```yaml
 sudo: required
 language: objective-c
-osx_image: xcode10.2
+osx_image: xcode10.3
 rvm:
-  - 2.6.3
+  - 2.6.4
 cache:
   timeout: 86400 # 1 day
   directories:
-    - /Users/travis/cache/
-    - /Users/travis/.rvm/
+    - $HOME/cache/
+    - $HOME/.rvm/
+    - $HOME/Library/Caches/Homebrew
+before_cache:
+  - brew cleanup
 install:
   - bash <(curl -fsSL https://raw.githubusercontent.com/neogeek/unity-ci-tools/master/bin/install.sh)
 script:
