@@ -46,14 +46,14 @@ clean:
 
 Add the following variables in the settings panel of your project on <https://travis-ci.org/>:
 
-| Key                     | Description                                                                                                             | Required |
-| ----------------------- | ----------------------------------------------------------------------------------------------------------------------- | -------- |
-| UNITY_INSTALLER_HASH    | Hash of editor installer. To be used to version. See [editor installers](data/editor-installers.json).                  | No       |
-| UNITY_INSTALLER_VERSION | Version of editor installer. To be used with hash. See [editor installers](data/editor-installers.json).                | No       |
-| UNITY_INSTALLER_URL     | Full URL of editor installer. See [editor installers](data/editor-installers.json).                                     | No       |
-| UNITY_SERIAL            | The serial key found at <https://id.unity.com/en/subscriptions>. Keys are only avalible with a Plus or Pro Subscription | Yes      |
-| UNITY_USERNAME          | Your email address used to log into <https://unity.com/>.                                                               | Yes      |
-| UNITY_PASSWORD          | Your password used to log into <https://unity.com/>.                                                                    | Yes      |
+| Key                     | Description                                                                                                                                               | Required |
+| ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| UNITY_INSTALLER_HASH    | Hash of editor installer. To be used to version. See [editor installers](https://github.com/neogeek/get-unity/blob/master/data/editor-installers.json).   | No       |
+| UNITY_INSTALLER_VERSION | Version of editor installer. To be used with hash. See [editor installers](https://github.com/neogeek/get-unity/blob/master/data/editor-installers.json). | No       |
+| UNITY_INSTALLER_URL     | Full URL of editor installer. See [editor installers](https://github.com/neogeek/get-unity/blob/master/data/editor-installers.json).                      | No       |
+| UNITY_SERIAL            | The serial key found at <https://id.unity.com/en/subscriptions>. Keys are only avalible with a Plus or Pro Subscription                                   | Yes      |
+| UNITY_USERNAME          | Your email address used to log into <https://unity.com/>.                                                                                                 | Yes      |
+| UNITY_PASSWORD          | Your password used to log into <https://unity.com/>.                                                                                                      | Yes      |
 
 ![](screenshots/travis-env-variables-empty.png)
 
