@@ -66,6 +66,10 @@ printf '\n%s\n\n' "$(<"${LOG_FILE}")"
 
 checktests() {
 
+    local TOTAL
+    local PASSED
+    local FAILED
+
     TOTAL=$(grep -Eo 'total="([0-9]*)"' "${LOG_FILE}" | head -1 | grep -Eo '[0-9]+')
     PASSED=$(grep -Eo 'passed="([0-9]*)"' "${LOG_FILE}" | head -1 | grep -Eo '[0-9]+')
     FAILED=$(grep -Eo 'failed="([0-9]*)"' "${LOG_FILE}" | head -1 | grep -Eo '[0-9]+')
