@@ -74,7 +74,7 @@ checktests() {
     PASSED=$(grep -Eo 'passed="([0-9]*)"' "${LOG_FILE}" | head -1 | grep -Eo '[0-9]+')
     FAILED=$(grep -Eo 'failed="([0-9]*)"' "${LOG_FILE}" | head -1 | grep -Eo '[0-9]+')
 
-    printf "Test Results \nTotal: %s Passed: %s Failed: %s\n" "${TOTAL}" "${PASSED}" "${FAILED}"
+    printf "Test Results:\n - Total %s\n ✔ Passed %s\n 𐄂 Failed %s\n" "${TOTAL}" "${PASSED}" "${FAILED}"
 
     if [ "${TOTAL}" -ne "${PASSED}" ]; then
 
