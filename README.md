@@ -11,7 +11,7 @@
 ```yaml
 sudo: required
 language: objective-c
-osx_image: xcode10.3
+osx_image: xcode11.2
 cache:
   timeout: 86400 # 1 day
   directories:
