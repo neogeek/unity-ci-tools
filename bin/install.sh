@@ -20,7 +20,7 @@ fi
 
 if [ -z "${UNITY_INSTALLER_URL}" ]; then
 
-    UNITY_INSTALLER_URL="https://netstorage.unity3d.com/unity/${UNITY_INSTALLER_HASH}/MacEditorInstaller/Unity-${UNITY_INSTALLER_VERSION}.pkg"
+    UNITY_INSTALLER_URL="https://download.unity3d.com/download_unity/${UNITY_INSTALLER_HASH}/MacEditorInstaller/Unity-${UNITY_INSTALLER_VERSION}.pkg"
 
 fi
 
