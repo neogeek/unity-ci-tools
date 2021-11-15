@@ -86,7 +86,7 @@ checktests() {
 
 }
 
-checktests "${LOG_FILE}"
+checktests
 
 CODE=$?
 
