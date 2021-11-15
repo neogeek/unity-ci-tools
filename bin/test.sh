@@ -62,17 +62,25 @@ fi
 
 LOG_FILE="$(pwd)/test.xml"
 
-printf '\n%s\n\n' "$(<"${LOG_FILE}")"
-
 checktests() {
 
     local TOTAL
     local PASSED
     local FAILED
 
+    if [ ! -f "${LOG_FILE}" ]; then
+
+        printf "Test results missing.\n"
+
+        return 1
+
+    fi
+
     TOTAL=$(grep -Eo 'total="([0-9]*)"' "${LOG_FILE}" | head -1 | grep -Eo '[0-9]+')
     PASSED=$(grep -Eo 'passed="([0-9]*)"' "${LOG_FILE}" | head -1 | grep -Eo '[0-9]+')
     FAILED=$(grep -Eo 'failed="([0-9]*)"' "${LOG_FILE}" | head -1 | grep -Eo '[0-9]+')
+
+    printf '\n%s\n\n' "$(<"${LOG_FILE}")"
 
     printf "Test Results:\n - Total %s\n ✔ Passed %s\n 𐄂 Failed %s\n" "${TOTAL}" "${PASSED}" "${FAILED}"
 
