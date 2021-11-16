@@ -6,22 +6,46 @@
 
 ## Setup
 
-### Create a `.travis.yml` File
+### Create a `bitrise.yml` File
 
 ```yaml
-sudo: required
-language: objective-c
-osx_image: xcode11.2
-cache:
-  timeout: 86400 # 1 day
-  directories:
-    - $HOME/cache/
-install:
-  - bash <(curl -fsSL https://raw.githubusercontent.com/neogeek/unity-ci-tools/v1.0.0/bin/install.sh)
-script:
-  - bash <(curl -fsSL https://raw.githubusercontent.com/neogeek/unity-ci-tools/v1.0.0/bin/auth.sh)
-  - bash <(curl -fsSL https://raw.githubusercontent.com/neogeek/unity-ci-tools/v1.0.0/bin/test.sh)
-  - bash <(curl -fsSL https://raw.githubusercontent.com/neogeek/unity-ci-tools/v1.0.0/bin/deauth.sh)
+---
+format_version: "8"
+default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+project_type: other
+trigger_map:
+  - push_branch: main
+    workflow: primary
+  - pull_request_source_branch: "*"
+    workflow: primary
+    pull_request_target_branch: main
+workflows:
+  primary:
+    steps:
+      - git-clone@6: {}
+      - cache-pull@2: {}
+      - script@1:
+          title: Install and Test with Unity
+          inputs:
+            - content: |-
+                #!/usr/bin/env bash
+                # fail if any commands fails
+                set -e
+                # debug log
+                set -x
+
+                bash <(curl -fsSL https://raw.githubusercontent.com/neogeek/unity-ci-tools/v1.1.0/bin/install.sh)
+                bash <(curl -fsSL https://raw.githubusercontent.com/neogeek/unity-ci-tools/v1.1.0/bin/auth.sh)
+                bash <(curl -fsSL https://raw.githubusercontent.com/neogeek/unity-ci-tools/v1.1.0/bin/test.sh)
+                bash <(curl -fsSL https://raw.githubusercontent.com/neogeek/unity-ci-tools/v1.1.0/bin/deauth.sh)
+      - cache-push@2:
+          inputs:
+            - cache_paths: "$HOME/cache"
+          is_always_run: true
+meta:
+  bitrise.io:
+    machine_type: standard
+    stack: osx-xcode-13.1.x
 ```
 
 ### Create a `Makefile` File
@@ -29,25 +53,21 @@ script:
 ```yaml
 test: SHELL:=/bin/bash
 test:
-	bash <(curl -fsSL https://raw.githubusercontent.com/neogeek/unity-ci-tools/v1.0.0/bin/test.sh)
+  bash <(curl -fsSL https://raw.githubusercontent.com/neogeek/unity-ci-tools/v1.1.0/bin/test.sh)
 
 clean:
-	git clean -xdf
+  git clean -xdf
 ```
 
-### Setup Environment Variables on Travis
+### Setup Environment Variables on Bitrise
 
-Add the following variables in the settings panel of your project on <https://travis-ci.org/>:
+Add the following variables in the Secrets tab in the Workflow Editor section of your project on <https://bitrise.io/>:
 
 | Key                     | Description                                                                                                                                               | Required |
 | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| UNITY_INSTALLER_HASH    | Hash of editor installer. To be used to version. See [editor installers](https://github.com/neogeek/get-unity/blob/master/data/editor-installers.json).   | No       |
-| UNITY_INSTALLER_VERSION | Version of editor installer. To be used with hash. See [editor installers](https://github.com/neogeek/get-unity/blob/master/data/editor-installers.json). | No       |
-| UNITY_INSTALLER_URL     | Full URL of editor installer. See [editor installers](https://github.com/neogeek/get-unity/blob/master/data/editor-installers.json).                      | No       |
 | UNITY_SERIAL            | The serial key found at <https://id.unity.com/en/subscriptions>. Keys are only avalible with a Plus or Pro Subscription                                   | Yes      |
 | UNITY_USERNAME          | Your email address used to log into <https://unity.com/>.                                                                                                 | Yes      |
 | UNITY_PASSWORD          | Your password used to log into <https://unity.com/>.                                                                                                      | Yes      |
-
-![](screenshots/travis-env-variables-empty.png)
-
-![](screenshots/travis-env-variables-filled-out.png)
+| UNITY_INSTALLER_URL     | Full URL of editor installer. See [editor installers](https://github.com/neogeek/get-unity/blob/master/data/editor-installers.json).                      | No       |
+| UNITY_INSTALLER_VERSION | Version of editor installer. To be used with hash. See [editor installers](https://github.com/neogeek/get-unity/blob/master/data/editor-installers.json). | No       |
+| UNITY_INSTALLER_HASH    | Hash of editor installer. To be used to version. See [editor installers](https://github.com/neogeek/get-unity/blob/master/data/editor-installers.json).   | No       |
